@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block menu %}
+<li class="nav-item active">
+  <a class="nav-link waves-effect waves-light" href="#">Home
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link waves-effect waves-light" href="{% url 'records' %}">Records</a>
+</li>
+{% endblock menu %}
+{% block setting %}
+<div class="md-form my-0">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link waves-effect waves-light" href="{% url 'settings' %}">Setting</a>
+    </li>
+  </ul>
+</div>
+{% endblock setting %}
+{% block content %}
+<form class="text-center border border-light p-5" action="" method="POST">
+  {% csrf_token %}
+
+  <p class="h4 mb-4">Milkyway!!</p>
+
+  <p>Milk Management Created By Badal Kumar.</p>
+
+  Milk Taken {{form.milk_taken}}<br><br>
+  <button class="btn btn-primary btn-block" type="submit" id="submit" disabled>Submit</button>
+
+</form>
+{% endblock content %}
+{% block footer %}
+
+{% endblock footer %}
